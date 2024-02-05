@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <div align="center">
+        <div><h1>Login Page</h1></div>
+        <div>
+            <!-- The action here refers to the 'user_login' function in your Flask app, ensure it matches the route name -->
+            <form action="{{ url_for('user_login') }}" method="POST">
+                <!-- Display the login message if there is any -->
+                <div>{{ message }}</div> <br><br>
+                <label>User Name: </label><input id="username" name="username" type="text" placeholder="User Name" autocomplete="off"/> <br><br>
+                <label>Password: </label><input id="password" name="password" type="password" placeholder="Password" autocomplete="off"/> <br><br>
+                <button id="submit" name="submit">Sign in</button>
+            </form>
+        </div>
+        <!-- Link to the registration page, ensure it matches the route name in your Flask app -->
+        <p>Don't have an account? Please click <a href="{{ url_for('user_registration') }}">here</a> to register.</p>
+    </div>
+</body>
+</html>
